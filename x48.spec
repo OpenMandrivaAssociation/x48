@@ -1,6 +1,6 @@
 %define name 	x48
 %define version 0.4.3
-%define release %mkrel 1
+%define release %mkrel 2
 	
 %define x11_prefix      /usr/X11R6
 Name:      	%name
@@ -13,7 +13,7 @@ URL:            https://sourceforge.net/projects/x48/
 Source:    	%name-%{version}.tar.gz
 #Patch:    	x48.patch
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-root
-Buildrequires:	libreadline-devel, libxorg-x11-devel
+Buildrequires:	libreadline-devel, libxorg-x11-devel, imake
 Requires:  	readline
 
 %description
