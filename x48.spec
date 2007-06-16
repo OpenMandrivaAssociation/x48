@@ -13,7 +13,7 @@ URL:            https://sourceforge.net/projects/x48/
 Source:    	%name-%{version}.tar.gz
 #Patch:    	x48.patch
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-root
-Buildrequires:	readline-devel, X11-devel, imake
+Buildrequires:	readline-devel, X11-devel, imake, x11-util-cf-files
 Requires:  	readline
 
 %description
@@ -35,6 +35,7 @@ make DESTDIR=$RPM_BUILD_ROOT PROJECTROOT=/usr BINDIR=%{_bindir} install
 make DESTDIR=$RPM_BUILD_ROOT PROJECTROOT=/usr MANPATH=%{_mandir} DOCDIR=%{_defaultdocdir}/%{name}-%{version} install.man
 
 rm -rf $RPM_BUILD_ROOT/x11_prefix
+rm -rf  $RPM_BUILD_ROOT/usr/lib/X11
 
 (cd $RPM_BUILD_ROOT
 mkdir -p ./%{_menudir}
