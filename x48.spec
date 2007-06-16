@@ -1,6 +1,6 @@
 %define name 	x48
 %define version 0.4.3
-%define release %mkrel 2
+%define release %mkrel 3
 	
 %define x11_prefix      /usr/X11R6
 Name:      	%name
@@ -33,6 +33,8 @@ mkdir -p ${RPM_BUILD_ROOT}%{_defaultdocdir}/%{name}-%{version}
 mkdir -p ${RPM_BUILD_ROOT}%{_datadir}/%{name}
 make DESTDIR=$RPM_BUILD_ROOT PROJECTROOT=/usr BINDIR=%{_bindir} install
 make DESTDIR=$RPM_BUILD_ROOT PROJECTROOT=/usr MANPATH=%{_mandir} DOCDIR=%{_defaultdocdir}/%{name}-%{version} install.man
+
+rm -rf $RPM_BUILD_ROOT/x11_prefix
 
 (cd $RPM_BUILD_ROOT
 mkdir -p ./%{_menudir}
