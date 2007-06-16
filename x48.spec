@@ -13,7 +13,7 @@ URL:            https://sourceforge.net/projects/x48/
 Source:    	%name-%{version}.tar.gz
 #Patch:    	x48.patch
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-root
-Buildrequires:	readline-devel, X11-devel, imake, x11-util-cf-files
+Buildrequires:	readline-devel, X11-devel, imake, x11-util-cf-files, ncurses-devel
 Requires:  	readline
 
 %description
