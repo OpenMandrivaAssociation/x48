@@ -13,7 +13,7 @@ URL:            https://sourceforge.net/projects/x48/
 Source:    	%name-%{version}.tar.gz
 #Patch:    	x48.patch
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-root
-Buildrequires:	libreadline-devel, libxorg-x11-devel, imake
+Buildrequires:	readline-devel, X11-devel, imake
 Requires:  	readline
 
 %description
