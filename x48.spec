@@ -76,7 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/mkcard
 %{_bindir}/x48
 %{_datadir}/%{name}
-/usr/X11R6/lib/X11/app-defaults
 #   /usr/X11R6/lib/X11/doc/html/x48.1.html
 %{_mandir}/man1/x48.*
 %{_menudir}/x48
