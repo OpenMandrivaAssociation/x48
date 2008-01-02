@@ -36,18 +36,16 @@ make DESTDIR=$RPM_BUILD_ROOT PROJECTROOT=/usr MANPATH=%{_mandir} DOCDIR=%{_defau
 rm -rf $RPM_BUILD_ROOT/x11_prefix
 rm -rf  $RPM_BUILD_ROOT/usr/lib/X11
 
-(cd $RPM_BUILD_ROOT
-mkdir -p ./%{_menudir}
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 
-cat > ./%{_menudir}/%{name} <<EOF
-?package(%{name}): \
-command="x48 -rom /usr/share/x48/rom" \
-title="x48" \
-longtitle="HP48 Emulator" \
-needs="x11" \
-section="Office/Accessories"
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=x48 -rom /usr/share/x48/rom
+Name=x48
+Comment=HP48 Emulator
+Categories=Office;
 EOF
-)
 
 cat > $RPM_BUILD_DIR/%{name}-%{version}/README.urpmi << EOF
 x48 needs a rom to function, so please read the README to see how to dump it
@@ -78,4 +76,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 #   /usr/X11R6/lib/X11/doc/html/x48.1.html
 %{_mandir}/man1/x48.*
-%{_menudir}/x48
+%{_datadir}/applications/mandriva-x48.desktop
