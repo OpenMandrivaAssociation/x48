@@ -9,6 +9,7 @@ Version:   	%version
 Release:  	%release
 License: 	GPL
 Group:     	Sciences/Mathematics
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:            https://sourceforge.net/projects/x48/
 Source:    	%name-%{version}.tar.gz
 #Patch:    	x48.patch
