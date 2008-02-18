@@ -4,7 +4,7 @@
 	
 %define x11_prefix      /usr/X11R6
 Name:      	%name
-Summary:   	X48 is an HP 48 GX emulator
+Summary:   	HP 48 GX emulator
 Version:   	%version
 Release:  	%release
 License: 	GPL
