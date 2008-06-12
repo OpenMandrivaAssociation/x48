@@ -57,11 +57,15 @@ The first time you launch x48, it will copy the rom to ~/.hp48.
 So if you like to change from sx to gx rom, please remove this directory first
 EOF
 
+%if %mdkversion < 200900
 %post
 %update_menus
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT 
