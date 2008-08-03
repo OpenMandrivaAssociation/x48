@@ -1,6 +1,6 @@
 %define name 	x48
 %define version 0.4.3
-%define release %mkrel 7
+%define release %mkrel 8
 	
 %define x11_prefix      /usr/X11R6
 Name:      	%name
