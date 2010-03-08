@@ -1,5 +1,5 @@
 %define name 	x48
-%define version 0.6.1
+%define version 0.6.3
 %define release %mkrel 1
 
 #define x11_prefix      /usr/X11R6
@@ -12,7 +12,7 @@ License:	GPL
 Group:		Sciences/Mathematics
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://x48.berlios.de/
-Source0:	%name-%{version}.tar.gz
+Source0:	http://download.berlios.de/x48/%{name}-%{version}.tar.gz
 Patch0:		x48-0.6.1-mdv-fix-string-format.patch
 BuildRequires:	readline-devel
 BuildRequires:	X11-devel
@@ -80,5 +80,6 @@ rm -rf %{buildroot}
 %{_bindir}/mkcard
 %{_bindir}/x48
 %{_datadir}/%{name}
+%{_datadir}/X11/app-defaults/X48
 %{_mandir}/man1/x48.*
 %{_datadir}/applications/mandriva-x48.desktop
