@@ -47,7 +47,7 @@ Comment=HP48 Emulator
 Categories=Office;
 EOF
 
-cat > $RPM_BUILD_DIR/%{name}-%{version}/README.urpmi << EOF
+cat > %{_builddir}/%{name}-%{version}/README.urpmi << EOF
 x48 needs a rom to function, so please read the README to see how to dump it
 from your HP48 or just use the rpm x48-gxrom or x48-sxrom from plf.
 If you dump the rom, please put it in the /usr/share/x48 directory.
