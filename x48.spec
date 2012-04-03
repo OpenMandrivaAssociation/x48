@@ -1,6 +1,6 @@
 %define name 	x48
-%define version 0.6.3
-%define release %mkrel 2
+%define version 0.6.4
+%define release 1
 
 #define x11_prefix      /usr/X11R6
 
@@ -10,9 +10,8 @@ Version:	%version
 Release:	%release
 License:	GPL
 Group:		Sciences/Mathematics
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://x48.berlios.de/
-Source0:	http://download.berlios.de/x48/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/project/x48.berlios/%{name}-%{version}.tar.bz2
 Patch0:		x48-0.6.1-mdv-fix-string-format.patch
 BuildRequires:	readline-devel
 BuildRequires:	X11-devel
@@ -25,15 +24,15 @@ This is an emulator of the HP 48 SX and GX calculator.
 Romdumps are available from http://x48.berlios.de/
 
 %prep
-%setup -q
+%setup -q -c %{name}-%{version} 
 %patch0 -p1 -b .format
 
 %build
+./autogen.sh
 %configure2_5x --with-x
 %make
 
 %install
-rm -rf %{buildroot}
 
 mkdir -p %{buildroot}/%{_datadir}/%{name}
 mkdir -p %{buildroot}/%{_datadir}/applications/
@@ -58,21 +57,7 @@ EOF
 
 %makeinstall_std
 
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
-
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root,-)
 %doc	README README.urpmi
 #%{_sysconfdir}/X11/app-defaults/X48
 %{_bindir}/checkrom
