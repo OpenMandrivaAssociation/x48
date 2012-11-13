@@ -1,0 +1,69 @@
+diff -ur x48-0.6.1.orig/src/rpl.c x48-0.6.1/src/rpl.c
+--- x48-0.6.1.orig/src/rpl.c	2009-08-01 02:10:40.000000000 +0200
++++ x48-0.6.1/src/rpl.c	2009-12-10 14:54:19.000000000 +0100
+@@ -367,7 +367,7 @@
+       *addr += 2;
+       if (hp48_trans_tbl[c].trans)
+         {
+-          sprintf(p, hp48_trans_tbl[c].trans);
++          sprintf(p, "%s", hp48_trans_tbl[c].trans);
+           p += strlen(p);
+         }
+       else
+@@ -611,7 +611,7 @@
+       c = read_nibbles(*addr + 2 * i + 7, 2);
+       if (hp48_trans_tbl[c].trans)
+         {
+-          sprintf(p, hp48_trans_tbl[c].trans);
++          sprintf(p, "%s" ,hp48_trans_tbl[c].trans);
+           p += strlen(p);
+         }
+       else
+@@ -767,7 +767,7 @@
+       *addr += 2;
+       if (hp48_trans_tbl[c].trans)
+         {
+-          sprintf(p, hp48_trans_tbl[c].trans);
++          sprintf(p, "%s" ,hp48_trans_tbl[c].trans);
+           p += strlen(p);
+         }
+       else
+@@ -811,7 +811,7 @@
+       *addr += 2;
+       if (hp48_trans_tbl[c].trans)
+         {
+-          sprintf(p, hp48_trans_tbl[c].trans);
++          sprintf(p, "%s" ,hp48_trans_tbl[c].trans);
+           p += strlen(p);
+         }
+       else
+@@ -988,7 +988,7 @@
+                           name_addr += 2;
+                           if (hp48_trans_tbl[c].trans)
+                             {
+-                              sprintf(p, hp48_trans_tbl[c].trans);
++                              sprintf(p, "%s" ,hp48_trans_tbl[c].trans);
+                               p += strlen(p);
+                             }
+                           else
+@@ -1181,7 +1181,7 @@
+   *p++ = '\'';
+   if (hp48_trans_tbl[c].trans)
+     {
+-      sprintf(p, hp48_trans_tbl[c].trans);
++      sprintf(p, "%s" ,hp48_trans_tbl[c].trans);
+       p += strlen(p);
+     }
+   else
+diff -ur x48-0.6.1.orig/src/serial.c x48-0.6.1/src/serial.c
+--- x48-0.6.1.orig/src/seria1l.c	2009-08-01 02:10:40.000000000 +0200
++++ x48-0.6.1/src/serial.c	2009-12-10 14:50:22.000000000 +0100
+@@ -294,7 +294,7 @@
+   ir_fd = -1;
+   if (useSerial)
+     {
+-      sprintf(tty_dev_name, serialLine);
++      sprintf(tty_dev_name, "%s" ,serialLine);
+       if ((ir_fd = open(tty_dev_name, O_RDWR | O_NDELAY)) >= 0)
+         {
+           if (verbose)
