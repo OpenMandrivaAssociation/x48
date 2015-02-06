@@ -1,6 +1,6 @@
 %define name 	x48
 %define version 0.6.4
-%define release 1
+%define release 2
 
 #define x11_prefix      /usr/X11R6
 
