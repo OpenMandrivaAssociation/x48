@@ -10,7 +10,7 @@ Version:	%version
 Release:	%release
 License:	GPL
 Group:		Sciences/Mathematics
-URL:		http://x48.berlios.de/
+URL:		https://x48.berlios.de/
 Source0:	http://downloads.sourceforge.net/project/x48.berlios/%{name}-%{version}.tar.bz2
 Patch0:		x48-0.6.1-mdv-fix-string-format.patch
 BuildRequires:	readline-devel
