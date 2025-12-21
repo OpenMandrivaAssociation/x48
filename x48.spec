@@ -13,6 +13,11 @@ Group:		Sciences/Mathematics
 URL:		https://x48.berlios.de/
 Source0:	http://downloads.sourceforge.net/project/x48.berlios/%{name}-%{version}.tar.bz2
 Patch0:		x48-0.6.1-mdv-fix-string-format.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	readline-devel
 BuildRequires:	X11-devel
 BuildRequires:	x11-util-cf-files
